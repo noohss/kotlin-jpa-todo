@@ -12,7 +12,7 @@ class TodoController (
 ){
 
     @PostMapping("/save")
-    fun save(req: TodoRequest): ApiResponse<Any> {
+    fun save(@RequestBody req: TodoRequest): ApiResponse<Any> {
         return ApiResponse(ResultCode.SUCCESS.status, ResultCode.SUCCESS.message, todoService.save(req))
     }
 
@@ -32,7 +32,7 @@ class TodoController (
     }
 
     @PutMapping("/update/{id}")
-    fun update(@PathVariable id: Long, req: TodoRequest): ApiResponse<Any> {
+    fun update(@PathVariable id: Long, @RequestBody req: TodoRequest): ApiResponse<Any> {
         return ApiResponse(ResultCode.SUCCESS.status, ResultCode.SUCCESS.message, todoService.update(id, req))
     }
 }

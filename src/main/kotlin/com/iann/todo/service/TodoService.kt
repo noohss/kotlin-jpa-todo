@@ -59,9 +59,14 @@ class TodoService(
      */
     @Transactional
     fun update(todoId: Long, req: TodoRequest): Todo {
-        todoRepository.findById(todoId).orElseThrow {
+        val todo = todoRepository.findById(todoId).orElseThrow {
             BaseException(ResultCode.TODO_NOT_FOUND)
         }
-        return todoRepository.save(req.toEntity())
+        todo.title = req.title
+        todo.desc = req.desc
+        todo.status = req.status
+        todo.startDate = req.startDate
+        todo.endDate = req.endDate
+        return todoRepository.save(todo)
     }
 }
