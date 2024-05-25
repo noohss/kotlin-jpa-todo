@@ -31,7 +31,7 @@ class TodoService(
 
 
     /**
-     * 특정 일정 조회
+     * 특정 일정 상세
      */
     @Transactional(readOnly = true)
     fun findOne(todoId: Long): Todo {
@@ -64,7 +64,7 @@ class TodoService(
         }
         todo.title = req.title
         todo.desc = req.desc
-        todo.status = req.status
+        todo.isComplete = req.isComplete
         todo.startDate = req.startDate
         todo.endDate = req.endDate
         return todoRepository.save(todo)

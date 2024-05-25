@@ -9,6 +9,7 @@ import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.sql.Date
 import java.sql.Timestamp
+import java.time.LocalDateTime
 
 @Entity
 @DynamicUpdate
@@ -25,7 +26,7 @@ class Todo (
     var desc: String,
 
     @Column(nullable = false)
-    var status: String,
+    var isComplete: Boolean,
 
     @Column(nullable = false)
     var startDate: Date,

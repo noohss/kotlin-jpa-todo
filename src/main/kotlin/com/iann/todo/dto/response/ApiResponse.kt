@@ -7,4 +7,9 @@ data class ApiResponse<Any>(
         val message: String,
         val data: Any? = null
 ) {
+    companion object {
+        fun <Any> success(data: Any?): ApiResponse<Any> {
+            return ApiResponse(ResultCode.SUCCESS.status, ResultCode.SUCCESS.message, data)
+        }
+    }
 }
