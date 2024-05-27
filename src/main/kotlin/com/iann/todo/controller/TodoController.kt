@@ -11,22 +11,22 @@ import org.springframework.web.bind.annotation.*
 
 @Tag(name = "todo API")
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/todo")
 class TodoController (
         private val todoService: TodoService
 ){
 
-    @PostMapping("/save")
+    @PostMapping("")
     fun save(@RequestBody req: TodoRequest): ApiResponse<Any> {
         return ApiResponse.success(todoService.save(req))
     }
 
-    @GetMapping("/todoList")
+    @GetMapping("")
     fun findList(): ApiResponse<Any> {
         return ApiResponse.success(todoService.findList())
     }
 
-    @GetMapping("/todo/{id}")
+    @GetMapping("/{id}")
     fun findOne(@PathVariable id: Long): ApiResponse<Any>{
         return ApiResponse.success(todoService.findOne(id))
     }
