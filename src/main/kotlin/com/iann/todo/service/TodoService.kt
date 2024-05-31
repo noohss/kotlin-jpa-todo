@@ -34,8 +34,8 @@ class TodoService(
      * 특정 일정 상세
      */
     @Transactional(readOnly = true)
-    fun findOne(todoId: Long): Todo {
-        val todo = todoRepository.findById(todoId).orElseThrow {
+    fun findOne(id: Long): Todo {
+        val todo = todoRepository.findById(id).orElseThrow {
             BaseException(ResultCode.TODO_NOT_FOUND)
         }
         return todo
@@ -46,11 +46,11 @@ class TodoService(
      * 일정 삭제
      */
     @Transactional
-    fun delete(todoId: Long) {
-        todoRepository.findById(todoId).orElseThrow{
+    fun delete(id: Long) {
+        todoRepository.findById(id).orElseThrow{
             BaseException(ResultCode.TODO_NOT_FOUND)
         }
-        return todoRepository.deleteById(todoId)
+        return todoRepository.deleteById(id)
     }
 
 
@@ -58,15 +58,13 @@ class TodoService(
      * 일정 수정
      */
     @Transactional
-    fun update(todoId: Long, req: TodoRequest): Todo {
-        val todo = todoRepository.findById(todoId).orElseThrow {
+    fun update(id: Long, req: TodoRequest): Todo {
+        val todo = todoRepository.findById(id).orElseThrow {
             BaseException(ResultCode.TODO_NOT_FOUND)
         }
         todo.title = req.title
         todo.desc = req.desc
         todo.isComplete = req.isComplete
-        todo.startDate = req.startDate
-        todo.endDate = req.endDate
         return todoRepository.save(todo)
     }
 }

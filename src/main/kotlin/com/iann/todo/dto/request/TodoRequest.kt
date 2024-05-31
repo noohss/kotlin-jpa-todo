@@ -9,7 +9,7 @@ import java.sql.Timestamp
 import java.time.LocalDateTime
 
 data class TodoRequest(
-    val todoId: Long? = null,
+    val id: Long? = null,
 
     @NotBlank
     @Size(min = 0, max = 20)
@@ -18,16 +18,12 @@ data class TodoRequest(
     @Size(min = 0, max = 200)
     val desc: String,
     val isComplete: Boolean = false,
-    val startDate: Date,
-    val endDate: Date
 ) {
 
     fun toEntity(): Todo = Todo(
-            todoId = todoId,
+            id = id,
             title = title,
             desc = desc,
             isComplete = isComplete,
-            startDate = startDate,
-            endDate = endDate
     )
 }

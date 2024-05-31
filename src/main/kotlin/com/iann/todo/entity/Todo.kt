@@ -17,7 +17,7 @@ class Todo (
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val todoId: Long? = null,
+    val id: Long? = null,
 
     @Column(length = 20, nullable = false)
     var title: String,
@@ -27,11 +27,5 @@ class Todo (
 
     @Column(nullable = false)
     var isComplete: Boolean,
-
-    @Column(nullable = false)
-    var startDate: Date,
-
-    @Column(nullable = false)
-    var endDate: Date
 ){
 }
