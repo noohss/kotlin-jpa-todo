@@ -1,6 +1,6 @@
-package com.iann.todo.dto.response
+package com.iann.todo.todo.dto.response
 
-import com.iann.todo.exception.ResultCode
+import com.iann.todo.global.exception.ResultCode
 
 data class ApiResponse<Any>(
         val status: Int,

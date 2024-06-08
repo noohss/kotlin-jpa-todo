@@ -1,6 +1,6 @@
-package com.iann.todo.dto.request
+package com.iann.todo.todo.dto.request
 
-import com.iann.todo.entity.Todo
+import com.iann.todo.todo.entity.Todo
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.Size
 import lombok.Builder

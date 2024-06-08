@@ -1,10 +1,10 @@
-package com.iann.todo.service
+package com.iann.todo.todo.service
 
-import com.iann.todo.dto.request.TodoRequest
-import com.iann.todo.entity.Todo
-import com.iann.todo.exception.BaseException
-import com.iann.todo.exception.ResultCode
-import com.iann.todo.repository.TodoRepository
+import com.iann.todo.todo.dto.request.TodoRequest
+import com.iann.todo.todo.entity.Todo
+import com.iann.todo.global.exception.BaseException
+import com.iann.todo.global.exception.ResultCode
+import com.iann.todo.todo.repository.TodoRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

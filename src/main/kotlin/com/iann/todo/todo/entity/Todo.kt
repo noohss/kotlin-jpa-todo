@@ -1,4 +1,4 @@
-package com.iann.todo.entity
+package com.iann.todo.todo.entity
 
 import jakarta.persistence.*
 import lombok.AllArgsConstructor

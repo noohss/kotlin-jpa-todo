@@ -1,4 +1,4 @@
-package com.iann.todo.config
+package com.iann.todo.global.config
 
 import io.swagger.v3.oas.models.Components
 import io.swagger.v3.oas.models.OpenAPI

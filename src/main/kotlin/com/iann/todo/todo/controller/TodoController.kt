@@ -1,9 +1,9 @@
-package com.iann.todo.controller
+package com.iann.todo.todo.controller
 
-import com.iann.todo.dto.request.TodoRequest
-import com.iann.todo.dto.response.ApiResponse
-import com.iann.todo.exception.ResultCode
-import com.iann.todo.service.TodoService
+import com.iann.todo.todo.dto.request.TodoRequest
+import com.iann.todo.todo.dto.response.ApiResponse
+import com.iann.todo.global.exception.ResultCode
+import com.iann.todo.todo.service.TodoService
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.Parameter
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -27,7 +27,7 @@ class TodoController (
     }
 
     @GetMapping("/{id}")
-    fun findOne(@PathVariable id: Long): ApiResponse<Any>{
+    fun findOne(@PathVariable id: Long): ApiResponse<Any> {
         return ApiResponse.success(todoService.findOne(id))
     }
 
